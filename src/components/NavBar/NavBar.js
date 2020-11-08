@@ -3,6 +3,9 @@ import styles from './navbar.module.css';
 import logo from '../../assets/logo.svg';
 import {Link} from 'react-router-dom';
 import ToggleBtn from '../sideDrawer/DrawerToggle';
+import SignedLinks from './SignedLinks';
+import SignedOutLinks from './SignedOutLinks';
+
 const Header = ({drawerClick}) => {
     const [handleShow, setHandleShow] = useState(false);
     useEffect(()=>{
@@ -27,11 +30,8 @@ const Header = ({drawerClick}) => {
             </Link>
             
             <nav className={styles.header__navigation}>
-                <ul>
-                    <Link to="/"><li>Home</li></Link>
-                    <Link to="/about"><li>About</li></Link>
-                    <Link to="/signUp"><li className={styles.signUpButton}>Sign Up </li></Link>
-                </ul>
+                <SignedLinks />
+                {/* <SignedOutLinks /> */}
             </nav>
         </div>
     )
