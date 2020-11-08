@@ -2,15 +2,15 @@
 
 The website is built for hackathon. More details coming very soon. The very start of sartsug Bhutan startup.
 
-## setup
+# setup
 
-# Color Pallete Used:
+## Color Pallete Used:
 - ![#2F2B5A](https://via.placeholder.com/15/2F2B5A/000000?text=+) `#2F2B5A` - Primary Color. 
 - ![#A0C7B2](https://via.placeholder.com/15/A0C7B2/000000?text=+) `#A0C7B2` - Secondary Color. 
 - ![#546E9C](https://via.placeholder.com/15/546E9C/000000?text=+) `#546E9C` - In case you want color. 
  
 
-# Font used:
+## Font used:
 - To be discussed with the team.
 
 ## To Run the app
