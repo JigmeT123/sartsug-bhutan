@@ -1,11 +1,13 @@
 import './index.css';
+import Header from './components/Header/Header';
+
 function App() {
     return (
-        <div className="App">
-            <div className="wave-animate">
-              <div className="wave"></div>
-              <div className="wave1"></div>
-            </div>
+        <div className="container">
+          <div className="HeaderContainer">
+          <Header />
+          </div>
+           
         </div>
     );
 }
