@@ -1,12 +1,11 @@
 .header{
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: absolute;
-  top: 0;
   background-color: #273773;
-  height: 600px;  
+  height: 650px;  
   width: 100%;
 }
 .headerContent{

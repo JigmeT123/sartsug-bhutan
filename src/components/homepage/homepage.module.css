@@ -1,0 +1,45 @@
+.homepage {
+    position: relative;
+}
+.masala{
+    font-size: 20px;
+    color: #273773;
+    margin-top: 10px;
+}
+.homepageHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.homepageHeader > h1{
+    color: #8BD8BD;
+    font-weight: bolder;
+    letter-spacing: 10px;
+    font-family: cursive;
+}
+.homepageContent {
+    height: 800px;
+    width: 100%;
+    display: flex;
+margin-top: 80px;
+    align-items: center;
+    flex-direction: column;
+}
+.homepageContentLogoContainer {
+    display: flex;
+    overflow-x: scroll;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 50px;
+    align-items: center;
+
+}
+.imgLogo {
+    width: 200px;
+    height: 200px;
+    margin: 10px 50px;
+    border-radius: 20%;
+}

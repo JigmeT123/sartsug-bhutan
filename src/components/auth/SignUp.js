@@ -11,7 +11,6 @@ const SignUp = () => {
         e.preventDefault();
         console.log(email, password);
     }
-
     const emailHandler = e => {
         setEmail(e.target.value);
     }
@@ -70,7 +69,6 @@ const SignUp = () => {
                         onChange={confirmPasswordHandler}
                         value={confirmpassword}/>
                 </Grid>
-
                 <Button onClick={handleSubmit} className={styles.signInBtn}>Sign Up</Button>
             </form>
 
