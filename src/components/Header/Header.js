@@ -10,7 +10,6 @@ const Header = () => {
                     <p>We connect volunteers, that are willing to help clean up the cities, send reports about areas with litter, or both</p>
                     <Button className={styles.volunteerBtn}>Be a part !</Button>
                 </div>
-                {/* <img className={styles.imgenv} src={environment} alt="Environment" /> */}
             </div>
             <div className={styles.waveAnimate}>
               <div className={styles.wave}></div>

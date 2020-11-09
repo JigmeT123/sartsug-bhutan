@@ -25,13 +25,17 @@ const Header = ({drawerClick}) => {
             <div className={styles.extra}>
             <ToggleBtn click={drawerClick}/>
             </div>
+
+            <div className={styles.logoComtainer}>
             <Link to="/">
             <img className={styles.header__logo} src={logo} alt="CompanyLogo" />
             </Link>
+            </div>
+            
             
             <nav className={styles.header__navigation}>
-                <SignedLinks />
-                {/* <SignedOutLinks /> */}
+                {/* <SignedLinks /> */}
+                <SignedOutLinks />
             </nav>
         </div>
     )

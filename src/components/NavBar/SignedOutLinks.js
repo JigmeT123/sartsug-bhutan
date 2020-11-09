@@ -11,9 +11,11 @@ const SignedLinks = () => {
                 <NavLink to="/about">About</NavLink>
             </li>
             <li >
-                <NavLink className={styles.signUpButton} to="/SignUp">Sign Up</NavLink>
+                <NavLink to="/signIn">Sign In</NavLink>
             </li>
-
+            <li >
+                <NavLink className={styles.signUpButton} to="/signUp">Sign Up</NavLink>
+            </li>
         </ul>
     )
 }

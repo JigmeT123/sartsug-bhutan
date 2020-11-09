@@ -1,0 +1,52 @@
+.signInContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+.formTitle{
+    margin-bottom: 50px;
+}
+
+.signIn{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column;
+    
+}
+.formTitle > h1 {
+    font-size: 30px;
+    color: #8BD8BD;
+    font-family: cursive;
+}
+
+.gridContainer{
+    width: 500px !important;
+}
+form{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.field{
+    display: flex;
+}
+.textField{
+    width: 100% !important;
+    margin-top: 20px;
+}
+.textField:nth-child(1){
+   margin-bottom: 20px;
+}
+.signInBtn{
+    padding: 10px 20px !important;
+    background-color: #8BD8BD !important;
+    color: white !important;
+    width: 500px !important;
+    margin-top: 10px !important;
+}
