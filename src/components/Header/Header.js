@@ -1,5 +1,6 @@
 import styles from './header.module.css';
 import {Button} from '@material-ui/core';
+import { Link } from 'react-router-dom';
 // import environment from '../../assets/green.svg';
 const Header = () => {
     return (
@@ -8,7 +9,7 @@ const Header = () => {
                 <div className={styles.title}>
                     <h1>When we are together, <br /> We Clean</h1>
                     <p>We connect volunteers, that are willing to help clean up the cities, send reports about areas with litter, or both</p>
-                    <Button className={styles.volunteerBtn}>Be a part !</Button>
+                    <Button className={styles.volunteerBtn}><Link to="/signUp">Be a part !</Link></Button>
                 </div>
             </div>
             <div className={styles.waveAnimate}>

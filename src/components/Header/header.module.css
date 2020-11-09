@@ -43,7 +43,9 @@ a:hover{
   margin-top: 50px !important;
 }
 
-
+.volunteerBtn > a:hover{
+  color: white !important;
+}
 
 .waveAnimate{
   width: 100%;
