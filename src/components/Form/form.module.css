@@ -1,0 +1,33 @@
+.formContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textField{
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.textField {
+    margin-bottom: 20px !important;
+}
+.fileUploadTitle{
+    padding-bottom: 20px !important;
+    color: #8BD8BD;
+    font-weight: 800;
+}
+
+.formStyle{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.submitbtn{
+    margin-top: 20px !important;
+    background-color: #8BD8BD !important;
+    color: white !important;
+}

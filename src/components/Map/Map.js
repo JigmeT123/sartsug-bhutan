@@ -2,10 +2,11 @@ import {useState, useEffect} from 'react';
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import styles from './map.module.css';
 import {GoTrashcan} from 'react-icons/go';
+import Form from '../Form/Form';
 
 const Map = () => {
     const [viewport, setViewport] = useState(
-        {width: '100%', height: '100%', latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
+        {width: '70%', height: '80%', latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
     );
 
     const [showPopUp, setShowPopUp] = useState(false);
@@ -16,8 +17,8 @@ const Map = () => {
     }
     return (
         <div className={styles.map}>
-            <ReactMapGL className={styles.map} {...viewport} onDblClick={showAddMarkerPopUp}
-                // mapStyle="mapbox://styles/mapbox/streets-v11"
+            <ReactMapGL className={styles.map1} {...viewport} onDblClick={showAddMarkerPopUp}
+                mapStyle="mapbox://styles/mapbox/streets-v11"
                 mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN} onViewportChange={nextViewport => setViewport(nextViewport)}>
                 <Marker
                     //dont forget key
@@ -30,7 +31,7 @@ const Map = () => {
                             latitude={27.508042999999997}
                             longitude={90.51571369999999}
                             closeButton={true}
-                            closeOnClick={true}
+                            closeOnClick={false}
                             onClose={() => setShowPopUp(false)}
                             anchor="top"
                             dynamicPosition={true}>
@@ -51,14 +52,17 @@ const Map = () => {
                                 true
                             }
                             closeOnClick = {
-                                true
+                                false
                             }
                             onClose = {
                                 () => setInfo(null)
                             }
                             anchor = "top" dynamicPosition = {
                                 true
-                            } > <div className={styles.popUp}>Add New</div>
+                            } > <div className={styles.popUp}>
+                                <h4>Report waste:</h4>
+                                <Form />
+                            </div>
                         </Popup>
 
                         <Marker 
@@ -72,6 +76,8 @@ const Map = () => {
                         : null
                 }
             </ReactMapGL>
+
+            <div></div>
         </div>
 
     );

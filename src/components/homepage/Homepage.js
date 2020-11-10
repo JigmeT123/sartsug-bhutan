@@ -14,7 +14,7 @@ const Homepage = () => {
             <Header />
             <div className={styles.homepageContent}>
                 <div className={styles.homepageHeader}>
-                    <h1>Sertsug Branches</h1>
+                    <h1>Sartsug Branches</h1>
                     <GiStarSwirl className={styles.masala}/> 
                 </div>
                 <div className={styles.homepageContentLogoContainer}>
