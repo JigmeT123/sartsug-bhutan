@@ -1,20 +1,27 @@
-import {Card, CardActionArea, Typography, Button, CardContent, CardMedia, CardActions} from '@material-ui/core';
+import {
+    Card,
+    CardActionArea,
+    Typography,
+    Button,
+    CardContent,
+    CardMedia,
+    CardActions
+} from '@material-ui/core';
 import styles from './card.module.css';
+import {Link} from 'react-router-dom';
 
-const CardComponent = ({images, description, name}) => {
+const CardComponent = ({images, description, name, linkToSite}) => {
     return (
         <Card className={styles.root}>
             <CardActionArea>
-                <CardMedia
-                    className={styles.media}
-                    image={images}
-                    title={name}/>
+                <Link to={linkToSite}><CardMedia className={styles.media} image={images} title={name}/>
+                </Link>
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
+                    <Typography gutterBottom="gutterBottom" variant="h5" component="h2">
                         {name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                       {description}
+                        {description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
@@ -31,4 +38,3 @@ const CardComponent = ({images, description, name}) => {
 }
 
 export default CardComponent;
-

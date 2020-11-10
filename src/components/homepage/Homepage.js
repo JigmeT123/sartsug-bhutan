@@ -18,7 +18,7 @@ const Homepage = () => {
                     <GiStarSwirl className={styles.masala}/> 
                 </div>
                 <div className={styles.homepageContentLogoContainer}>
-                    <CardComponent images={Logo1} description="loremnksfnkasnf asjf saf sa fas f as fsa fsa" name="Sartsug Waste"/>
+                    <CardComponent images={Logo1} description="loremnksfnkasnf asjf saf sa fas f as fsa fsa" name="Sartsug Waste" linkToSite="/map"/>
                     <CardComponent images={Logo2} description="loremnksfnkasnf asjf saf sa fas f as fsa fsa" name="Sartsug Care"/>
                     <CardComponent images={Logo3} description="loremnksfnkasnf asjf saf sa fas f as fsa fsa" name="Sartsug Learn"/>
                     <CardComponent images={Logo4} description="loremnksfnkasnf asjf saf sa fas f as fsa fsa" name="Sartsug Kids"/>

@@ -1,0 +1,22 @@
+.map{
+    width: 100%;
+    height: 100vh;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.markerPic{
+    font-size: 30px;
+    color: red;
+}
+
+.popUp{
+    max-width: 300px;
+
+}
+
+.markerPicAdd{
+    font-size: 30px;
+    color: green;
+}

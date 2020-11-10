@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import styles from './auth.module.css';
 import {Grid, TextField, Button} from '@material-ui/core'
-import Footer from '../footer/Footer';
 const SignIn = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

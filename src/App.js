@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Homepage from './components/homepage/Homepage';
+import Map from './components/Map/Map';
 
 function App() {
     const [toggle, setToggle] = useState(false)
@@ -31,6 +32,7 @@ function App() {
                         <Route exact path="/" component={Homepage} />
                         <Route exact path="/signIn" component={SignIn} />
                         <Route exact path="/signUp" component={SignUp} />
+                        <Route exact path="/map" component={Map} />
                     </Switch>
 
                 </div>
