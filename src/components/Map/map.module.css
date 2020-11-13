@@ -3,7 +3,6 @@
     width: 100%;
     display: flex;
     padding-top: 100px;
-    
     align-items: center;
     flex-direction: column;
 
@@ -100,7 +99,7 @@
 .instructions > ul > li{
     margin-top: 20px;
 }
-span{
+li > span{
     color: #273773;
     font-weight: bold;
 }

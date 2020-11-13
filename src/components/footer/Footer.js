@@ -54,17 +54,6 @@ const Footer = () => {
                         <span>Build for change.</span>
                     </p>
                 </div>
-                <div className={styles.footerTwoStats}>
-                    <p>
-                        <span>1000</span>
-                        Courses</p>
-                    <p>
-                        <span>530</span>
-                        New Jobs</p>
-                    <p>
-                        <span>2000</span>
-                        Students</p>
-                </div>
             </div>
         </div>
     )

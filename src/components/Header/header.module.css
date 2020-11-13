@@ -14,15 +14,15 @@
 }
 
 .title{
-  padding: 20px;
-  width: 90%;
-  padding-left: 22%;
-  padding-right: 8%;
+  width: 100%;
+  padding-left: 200px;
+  padding-right: 100px;
 }
 
 .title > p{
-  margin-top: 30px;
+  margin-top: 20px;
   font-weight: 200;
+  line-height: 25px;
 }
 .title > h1{
   letter-spacing: 10px;
@@ -40,6 +40,7 @@ li{
   text-decoration: none;
 }
 
+
 .volunteerBtnHolder:hover{
   color: lightgray;
 }
@@ -55,7 +56,21 @@ li{
 .volunteerBtn > a:hover{
   color: white !important;
 }
-
+.donateBtnHolder{
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.donateBtnHolder:hover{
+  color: lightgray;
+}
+.dontateBtn{
+  margin: 0 auto !important;
+  color: white !important;
+  background-color: #8BD8BD !important;
+  padding: 10px 25px !important;
+  margin-top: 50px !important;
+}
 .waveAnimate{
   width: 100%;
   height: 150px;
