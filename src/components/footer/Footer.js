@@ -14,13 +14,13 @@ const Footer = () => {
 
                     <p>Here at StarTsug Bhutan, we plan on implementing the newest technology for the benefit for all. We strive to build a safer, cleaner and a society with values and respect for one another. “Build for change” is the reason why we started StarTsug. The only way to see changes is by actually taking a step to make the change and we, at StarTsug hope to create and implement technologies which will benefit the society, people and every being for the good. Take a journey together with us to “Build for Change”.</p>
                     <div className={styles.footerOneMediaContainer}>
-                        <a href="/" target="_blank" className={styles.footerInsta}><AiOutlineInstagram/>
+                        <a href="https://instagram.com/sartsugbhutan" rel="noopener noreferrer" target="_blank" className={styles.footerInsta}><AiOutlineInstagram/>
                         </a>
-                        <a href="/" target="_blank" className={styles.footerFacebook}><AiFillFacebook/>
+                        <a href="/" rel="noopener noreferrer" target="_blank" className={styles.footerFacebook}><AiFillFacebook/>
                         </a>
-                        <a href="/" target="_blank" className={styles.footerTwitter}><AiOutlineTwitter/>
+                        <a href="/" rel="noopener noreferrer" target="_blank" className={styles.footerTwitter}><AiOutlineTwitter/>
                         </a>
-                        <a href="/" target="_blank" className={styles.footerLinkedin}><AiFillLinkedin/>
+                        <a href="/" rel="noopener noreferrer" target="_blank" className={styles.footerLinkedin}><AiFillLinkedin/>
                         </a>
                     </div>
                 </div>

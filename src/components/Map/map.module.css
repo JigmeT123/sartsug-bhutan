@@ -1,7 +1,7 @@
-.map{
+.map {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 1000px;
     background-color: #ffffff;
     display: flex;
     padding-top: 100px;
@@ -9,16 +9,20 @@
     align-items: center;
 
 }
-.map1{
- border-radius: 20px;
- border: solid 8px #8BD8BD;
+.mapContentMain{
+    display: flex;
 }
-.markerPic{
+.map1 {
+    border-radius: 20px;
+    border: solid 8px #8BD8BD;
+}
+
+.markerPic {
     font-size: 30px;
     color: red;
 }
 
-.popUp{
+.popUp {
     max-width: 300px;
     width: 600px;
     padding: 20px;
@@ -28,7 +32,46 @@
     padding-bottom: 20px;
 }
 
-.markerPicAdd{
+.markerPicAdd {
     font-size: 30px;
     color: green;
+}
+
+.instructionBox {
+    background-color: #8BD8BD;
+    -webkit-box-shadow: 2px 3px 2px 4px rgba(139,216,189,1);
+    box-shadow: 2px 3px 2px 4px rgba(139,216,189,1);
+    height:500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+    margin: 0 30px;
+    padding: 20px;
+}
+
+.instructionBox > p{
+    font-size: 20px;
+    letter-spacing: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.instructions{
+    background-color: white;
+    margin-top: 40px;
+    padding: 0 25px;
+
+}
+
+.instructions > ul > li{
+    margin-top: 20px;
+}
+span{
+    color: #273773;
+    font-weight: bold;
+}
+.appreciation{
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
