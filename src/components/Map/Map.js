@@ -4,7 +4,8 @@ import styles from './map.module.css';
 import {GoTrashcan} from 'react-icons/go';
 import Form from '../Form/Form';
 import {GiGlassCelebration} from 'react-icons/gi';
-
+import Waste from '../wasteContent/Waste';
+import {GiTreeBranch} from 'react-icons/gi';
 const Map = () => {
 //     let southWest = latLng(26.7194029811, 88.8142484883);
 //   let northEast = latLng(28.2964385035, 92.1037117859);
@@ -21,6 +22,10 @@ const Map = () => {
     }
     return (
         <div className={styles.map}>
+            <div className={styles.sartsugWaste}>
+                <p>Sartsug Waste</p>
+                <GiTreeBranch className={styles.cleanIcon}/>
+            </div>
             <div className={styles.mapContentMain}>
             <ReactMapGL className={styles.map1} {...viewport} onDblClick={showAddMarkerPopUp}
                 mapStyle="mapbox://styles/mapbox/streets-v11"
@@ -98,7 +103,7 @@ const Map = () => {
                 </div>
             </div>
             </div>
-           
+           <Waste />
         </div>
 
     );
