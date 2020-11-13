@@ -25,11 +25,7 @@ const Form = () => {
                 <TextField className={styles.textField} multiline={true} variant="outlined" label="Description/Comments" value={description}
                     onChange={descriptionHandler}
                 />
-                <TextField className={styles.textField} variant="outlined" label="Email"
-                    //value={}
-                    helperText="We Never share your personal data"
-                    //onChange={}
-                />
+    
                 <p className={styles.fileUploadTitle}>Upload an image</p>
                 <input type="file" className={styles.fileUpload}
                     //value={}

@@ -9,29 +9,38 @@
   width: 100%;
 }
 .headerContent{
-  padding-top: 30px;
+  padding-top: 10px;
   color: white;
 }
 
 .title{
   padding: 20px;
-  text-align: center;
+  width: 90%;
+  padding-left: 22%;
+  padding-right: 8%;
 }
 
 .title > p{
   margin-top: 30px;
+  font-weight: 200;
+}
+.title > h1{
+  letter-spacing: 10px;
+}
+.title > h1 > span{
+  color: #8BD8BD;
 }
 
 li{
   list-style-type: none;
 }
 
-a{
+.volunteerBtnHolder{
   color: white;
   text-decoration: none;
 }
 
-a:hover{
+.volunteerBtnHolder:hover{
   color: lightgray;
 }
 

@@ -80,6 +80,14 @@
     background-color: #8BD8BD;
     color: white;
 }
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    color: lightgray;
+}
 
 
 @media screen and (max-width: 680px){

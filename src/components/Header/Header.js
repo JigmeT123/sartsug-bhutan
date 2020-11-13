@@ -7,9 +7,9 @@ const Header = () => {
         <div className={styles.header}>
             <div className={styles.headerContent}>
                 <div className={styles.title}>
-                    <h1>When we are together, <br /> We Clean</h1>
-                    <p>We connect volunteers, that are willing to help clean up the cities, send reports about areas with litter, or both</p>
-                    <Link to="/signUp"><Button className={styles.volunteerBtn}>Be a part !</Button></Link>
+                    <h1> Build For <span>Change</span></h1>
+                    <p>Here at StarTsug Bhutan, we plan on implementing the newest technology for the benefit for all. We strive to build a safer, cleaner and a society with values and respect for one another. “Build for change” is the reason why we started StarTsug. The only way to see changes is by actually taking a step to make the change and we, at StarTsug hope to create and implement technologies which will benefit the society, people and every being for the good. Take a journey together with us to “Build for Change”.</p>
+                    <Link className={styles.volunteerBtnHolder} to="/signUp"><Button className={styles.volunteerBtn}>Be a part !</Button></Link>
                 </div>
             </div>
             <div className={styles.waveAnimate}>

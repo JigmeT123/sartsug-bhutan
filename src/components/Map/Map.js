@@ -1,10 +1,13 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import styles from './map.module.css';
 import {GoTrashcan} from 'react-icons/go';
 import Form from '../Form/Form';
 
 const Map = () => {
+//     let southWest = latLng(26.7194029811, 88.8142484883);
+//   let northEast = latLng(28.2964385035, 92.1037117859);
+//   let bounds = latLngBounds(southWest, northEast);
     const [viewport, setViewport] = useState(
         {width: '70%', height: '80%', latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
     );

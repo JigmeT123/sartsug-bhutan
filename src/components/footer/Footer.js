@@ -12,10 +12,7 @@ const Footer = () => {
                         <h4>Sartsug Bhutan</h4>
                     </div>
 
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap</p>
+                    <p>Here at StarTsug Bhutan, we plan on implementing the newest technology for the benefit for all. We strive to build a safer, cleaner and a society with values and respect for one another. “Build for change” is the reason why we started StarTsug. The only way to see changes is by actually taking a step to make the change and we, at StarTsug hope to create and implement technologies which will benefit the society, people and every being for the good. Take a journey together with us to “Build for Change”.</p>
                     <div className={styles.footerOneMediaContainer}>
                         <a href="/" target="_blank" className={styles.footerInsta}><AiOutlineInstagram/>
                         </a>
