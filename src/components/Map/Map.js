@@ -25,9 +25,6 @@ const Map = (props) => {
         setLocationInfo(location);
     }, [location]);
 
-
-    
-
     return (
         <div className={styles.map}>
             <div className={styles.sartsugWaste}>
@@ -101,7 +98,7 @@ const Map = (props) => {
                                     true
                                 } > <div className={styles.popUp}>
                                     <h4>Report waste:</h4>
-                                    <Form/>
+                                    <Form locationInfo={info}/>
                                 </div>
                             </Popup>
 
@@ -150,6 +147,6 @@ const Map = (props) => {
     );
 }
 const mapStateToProps = (state) => {
-    return {location: state.map.latLng}
+    return {location: state.map.report}
 }
 export default connect(mapStateToProps)(Map);

@@ -1,8 +1,9 @@
 import styles from './form.module.css';
 import {Grid, TextField, Button, Select} from '@material-ui/core'
 import {useState} from 'react';
-
-const Form = () => {
+import {createReport} from '../../store/actions/mapActions';
+import {connect} from 'react-redux';
+const Form = (props,{locationInfo}) => {
     const [description, setDescription] = useState("");
     const [categories, setCategories] = useState("Severity");
     const [list, setList] = useState([
@@ -10,6 +11,16 @@ const Form = () => {
         "Middle",
         "High",
     ])
+    const submitHandler = e => {
+        e.preventDefault();
+        const reportInfo = {
+            description,
+            categories,
+            locationInfo: props.locationInfo
+        }
+        // console.log(reportInfo);
+        props.createReport(reportInfo)
+    }
     const descriptionHandler = e => {
         setDescription(e.target.value);
     }
@@ -37,10 +48,15 @@ const Form = () => {
                         {list.map((category) => (<option value={category}>{category}</option>))}
                     </Select>
                 </div>
-                <Button className={styles.submitbtn}>Submit</Button>
+                <Button onClick={submitHandler} className={styles.submitbtn}>Submit</Button>
             </Grid>
         </form>
     )
 }
 
-export default Form;
+const mapsDispatchToProps = (dispatch) => {
+    return{
+        createReport: (reportInfo) => dispatch(createReport(reportInfo))
+    }
+}
+export default connect(null, mapsDispatchToProps)(Form)
