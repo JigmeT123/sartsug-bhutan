@@ -1,7 +1,7 @@
 .homepage {
     position: relative;
 }
-.masala{
+.masala {
     font-size: 20px;
     color: #273773;
     margin-top: 10px;
@@ -14,7 +14,7 @@
     flex-direction: column;
     padding: 30px;
 }
-.homepageHeader > h1{
+.homepageHeader > h1 {
     color: #8BD8BD;
     font-weight: bolder;
     letter-spacing: 10px;
@@ -24,9 +24,12 @@
     height: 800px;
     width: 100%;
     display: flex;
-margin-top: 80px;
+    padding-top: 80px;
     align-items: center;
     flex-direction: column;
+    background: url("../../assets/bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .homepageContentLogoContainer {
     display: flex;
@@ -43,4 +46,3 @@ margin-top: 80px;
     margin: 10px 50px;
     border-radius: 20%;
 }
-
