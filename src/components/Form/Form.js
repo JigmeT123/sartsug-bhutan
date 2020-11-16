@@ -5,7 +5,7 @@ import {createReport} from '../../store/actions/mapActions';
 import {connect} from 'react-redux';
 const Form = (props,{locationInfo}) => {
     const [description, setDescription] = useState("");
-    const [categories, setCategories] = useState("Severity");
+    const [categories, setCategories] = useState("");
     const [list, setList] = useState([
         "Low",
         "Middle",
@@ -32,7 +32,7 @@ const Form = (props,{locationInfo}) => {
 
     return (
         <form className={styles.formContainer}>
-            <Grid className={styles.gridContainer} container="container">
+            <Grid className={styles.gridContainer} container>
                 <TextField className={styles.textField} multiline={true} variant="outlined" label="Description/Comments" value={description}
                     onChange={descriptionHandler}
                 />
@@ -43,9 +43,9 @@ const Form = (props,{locationInfo}) => {
                     //onChange={}
                 />
                 <div className={styles.formStyle} >
-                    <label for="exampleInputEmail1">Severity:</label>
+                    <label htmlFor="exampleInputEmail1">Severity:</label>
                     <Select className="form-control form-control-lg" value={categories} onChange={changeHandler}>
-                        {list.map((category) => (<option value={category}>{category}</option>))}
+                        {list.map((category,count) => (<option key={count} value={category}>{category}</option>))}
                     </Select>
                 </div>
                 <Button onClick={submitHandler} className={styles.submitbtn}>Submit</Button>

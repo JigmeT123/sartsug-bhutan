@@ -59,6 +59,7 @@ const Map = (props) => {
                                 {
                                 showPopUp[locate.id] ? (
                                     <Popup
+                                    key={locate.id}
                                         latitude={locate.lat}
                                         longitude={locate.lng}
                                         closeButton={true}

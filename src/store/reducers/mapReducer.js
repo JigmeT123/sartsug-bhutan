@@ -10,10 +10,7 @@ const mapReducer = (state = initState, action) => {
     switch(action.type){
         case 'CREATED_REPORT_INFO': 
         console.log("Info reported", action.reportInfo);
-        break;
-
-        default:
-            return null;
+        
     }
     return state;
 }
