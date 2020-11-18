@@ -5,17 +5,34 @@
   align-items: center;
   flex-direction: column;
   background-color: #273773;
-  height: 650px;  
+  height: 100vh;  
   width: 100%;
 }
 .headerContent{
   padding-top: 10px;
   color: white;
 }
+.titleContainer{
+  display: flex;
+}
 .title{
+  flex: 0.55;
   width: 100%;
-  padding-left: 200px;
-  padding-right: 100px;
+  /* background-color: red; */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ padding-left: 100px;
+ /* align-items: center; */
+}
+.mapContainer{
+  flex: 0.45;
+  background: url('../../assets/demo.svg') no-repeat;
+  background-size: 500px;
+  margin-right: 30px;
+  margin-bottom: 25px;
+  /* background-color: rebeccapurple; */
+  background-position: center;
 }
 .title > p{
   margin-top: 20px;
