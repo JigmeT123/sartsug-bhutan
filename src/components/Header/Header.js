@@ -10,7 +10,7 @@ const Header = () => {
                     <div className={styles.title}>
                         <h1>
                             Build For
-                            <span>Change</span>
+                            <span> Change</span>
                         </h1>
                         <p>Here at SarTsug Bhutan, we plan on implementing the newest technology for the
                             benefit for all. We strive to build a safer, cleaner and a society with values
