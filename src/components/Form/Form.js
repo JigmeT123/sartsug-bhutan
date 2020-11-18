@@ -3,6 +3,9 @@ import {Grid, TextField, Button, Select} from '@material-ui/core'
 import {useState} from 'react';
 import {createReport} from '../../store/actions/mapActions';
 import {connect} from 'react-redux';
+import app from '../../firebase';
+import axios from 'axios';
+
 const Form = (props,{locationInfo}) => {
     const [description, setDescription] = useState("");
     const [categories, setCategories] = useState("");
@@ -10,13 +13,17 @@ const Form = (props,{locationInfo}) => {
         "Low",
         "Middle",
         "High",
-    ])
+    ]);
+    const [image, setImage] = useState(null);
+
     const submitHandler = e => {
         e.preventDefault();
+       
         const reportInfo = {
             description,
             categories,
-            locationInfo: props.locationInfo
+            locationInfo: props.locationInfo,
+            image,
         }
         // console.log(reportInfo);
         props.createReport(reportInfo)
@@ -30,6 +37,19 @@ const Form = (props,{locationInfo}) => {
         setCategories(category);
     };
 
+    const imgUploadHandler = e => {
+        const file = e.target.files[0];
+        const bucketName = 'images';
+        const storageRef = app.storage().ref(`${bucketName}/${file.name}`)
+        const uploadTask = storageRef.put(file);
+        uploadTask.on(app.storage.TaskEvent.STATE_CHANGED,
+            ()=>{
+                const downloadUrl = uploadTask.snapshots().downloadUrl;
+                setImage(downloadUrl);
+            })
+        
+    }
+
     return (
         <form className={styles.formContainer}>
             <Grid className={styles.gridContainer} container>
@@ -39,8 +59,7 @@ const Form = (props,{locationInfo}) => {
     
                 <p className={styles.fileUploadTitle}>Upload an image</p>
                 <input type="file" className={styles.fileUpload}
-                    //value={}
-                    //onChange={}
+                    onChange={imgUploadHandler}
                 />
                 <div className={styles.formStyle} >
                     <label htmlFor="exampleInputEmail1">Severity:</label>
