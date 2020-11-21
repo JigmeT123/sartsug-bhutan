@@ -83,36 +83,25 @@ const Waste = () => {
                         <h1>Sartsug Points.
                         </h1>
                         <p>Engage in our projects, help us keep our cities clean and earn
-                            <b>
-                                Sartsug Points!</b>
+                            <b> Sartsug Points!</b>
                             <br/>
                             <br/>
                             Every 1000 Points collected together we plant 5 trees.
                         </p>
-                        {/* <div className={styles.sartsugPoints}>
-                            <h2>See how you can earn WeClean Points:</h2>
-                            <p>
-                                <span>Reporting Litter:
-                                </span>
-                                will earn you 1 point</p>
-                            <p>
-                                <span>Sartsug Volunteer:
-                                </span>
-                                will earn you 10 point</p>
-                        </div> */
-                        }
+                    
                         <Card className={styles.sartsugPoints}>
                             <CardContent>
 
                                 <h2>See how you can earn WeClean Points:</h2>
-                                <p>
+                               <p>
                                     <span>Reporting Litter:
                                     </span>
-                                    will earn you 1 point</p>
+                                    will earn you 10 point</p>
                                 <p>
                                     <span>Sartsug Volunteer:
                                     </span>
-                                    will earn you 10 point</p>
+                                    will earn you 50 point</p>
+                                    <p> <span>Donation:</span> 35 points</p>
                             </CardContent>
                         </Card>
 

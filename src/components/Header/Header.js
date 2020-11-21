@@ -21,7 +21,7 @@ const Header = () => {
                             together with us to “Build for Change”.</p>
                             <div>
                             <Link className={styles.volunteerBtnHolder} to="/signUp">
-                            <Button className={styles.volunteerBtn}>Be a part !</Button>
+                            <Button className={styles.volunteerBtn}>Be a part!!</Button>
                         </Link>
                         <Link className={styles.donateBtnHolder} to="/donation">
                             <Button className={styles.dontateBtn}>Donate</Button>

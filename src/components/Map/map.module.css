@@ -110,6 +110,7 @@ span{
     flex-direction: column;
     margin: 0 30px;
     padding: 20px;
+    border-radius: 20px;
 }
 
 .instructionBox > p{
@@ -122,7 +123,7 @@ span{
     background-color: white;
     margin-top: 40px;
     padding: 0 25px;
-
+    border-radius: 20px;
 }
 
 .instructions > ul > li{
