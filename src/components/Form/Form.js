@@ -4,7 +4,6 @@ import {useState} from 'react';
 import {createReport} from '../../store/actions/mapActions';
 import {connect} from 'react-redux';
 
-
 const Form = (props,{locationInfo}) => {
     const [description, setDescription] = useState("");
     const [categories, setCategories] = useState("");
@@ -13,19 +12,18 @@ const Form = (props,{locationInfo}) => {
         "Middle",
         "High",
     ]);
+
     // const [image, setImage] = useState(null);
     // const [url, setUrl] = useState(null);
 
     const submitHandler = e => {
         e.preventDefault();
-       
         const reportInfo = {
             description,
             categories,
             locationInfo: props.locationInfo,
         }
-        console.log(reportInfo);
-        props.createReport(reportInfo)
+        props.createReport(reportInfo);
     }
     const descriptionHandler = e => {
         setDescription(e.target.value);
@@ -68,7 +66,7 @@ const Form = (props,{locationInfo}) => {
 
 const mapsDispatchToProps = (dispatch) => {
     return{
-        createReport: (reportInfo) => dispatch(createReport(reportInfo))
+        createReport: (reportInfo) => dispatch(createReport(reportInfo)),
     }
 }
 export default connect(null, mapsDispatchToProps)(Form)

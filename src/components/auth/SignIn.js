@@ -3,7 +3,7 @@ import styles from './auth.module.css';
 import {Grid, TextField, Button} from '@material-ui/core';
 import {connect} from 'react-redux';
 import {signIn} from '../../store/actions/authActions';
-import { red } from '@material-ui/core/colors';
+import {Redirect} from 'react-router-dom';
 
 const SignIn = (props) => {
     const [email, setEmail] = useState("");
@@ -11,7 +11,6 @@ const SignIn = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(props)
         const credentials = {
             email,
             password,
@@ -25,7 +24,9 @@ const SignIn = (props) => {
     const passwordHandler = e => {
         setPassword(e.target.value);
     }
-    const {authError} = props
+    const {authError, auth} = props
+
+    if(auth.uid) return <Redirect to='/map'/>
   
     return (
         <div className={styles.signInContainer}>
@@ -73,6 +74,7 @@ const SignIn = (props) => {
 const mapStateToProps = (state) => {
     return {
         authError: state.auth.authError,
+        auth: state.firebase.auth
     }
 }
 const mapDispatchToProps = (dispatch) => {

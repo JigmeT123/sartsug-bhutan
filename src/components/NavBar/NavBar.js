@@ -7,7 +7,7 @@ import SignedLinks from './SignedLinks';
 import SignedOutLinks from './SignedOutLinks';
 import {connect} from 'react-redux';
 
-const Header = ({drawerClick}) => {
+const Header = ({drawerClick, auth}) => {
     const [handleShow, setHandleShow] = useState(false);
     useEffect(()=>{
         window.addEventListener('scroll', ()=> {
@@ -18,9 +18,11 @@ const Header = ({drawerClick}) => {
             }
         })
         return () => {
-            window.removeEventListener('scroll');
+            window.removeEventListener('scroll', null);
         };
     }, [])
+
+    const links = auth.uid ? <SignedLinks /> : <SignedOutLinks />;
     return (
         <div className={`${styles.header} ${handleShow && styles.header__scrolled}`}>
             <div className={styles.extra}>
@@ -33,19 +35,17 @@ const Header = ({drawerClick}) => {
             </Link>
             </div>
             
-            
             <nav className={styles.header__navigation}>
-                <SignedLinks />
-                <SignedOutLinks />
+              {links}
             </nav>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    
     return {
-
+        auth: state.firebase.auth,
     }
 }
 export default connect(mapStateToProps)(Header)

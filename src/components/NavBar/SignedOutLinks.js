@@ -10,6 +10,9 @@ const SignedLinks = () => {
             <li>
                 <NavLink to="/about">About</NavLink>
             </li>
+            <li>
+                <NavLink to="/leaderboard">LeaderBoard</NavLink>
+            </li>
             <li >
                 <NavLink to="/signIn">Sign In</NavLink>
             </li>

@@ -1,15 +1,23 @@
 import {useState} from 'react';
 import styles from './auth.module.css';
 import {Grid, TextField, Button} from '@material-ui/core'
-const SignUp = () => {
+import {Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {signUp} from '../../store/actions/authActions';
+
+const SignUp = (props) => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmpassword, setConfirmPassword] = useState("");
-
+    const {auth, signUp} = props
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(email, password);
+        let newUser = {
+            email,
+            name,
+            password,
+        }
+        signUp(newUser)
     }
     const emailHandler = e => {
         setEmail(e.target.value);
@@ -20,9 +28,9 @@ const SignUp = () => {
     const nameHandler = e => {
         setName(e.target.value);
     }
-    const confirmPasswordHandler = e => {
-        setConfirmPassword(e.target.value);
-    }
+
+
+    if(auth.uid) return <Redirect to='/map'/>
     return (
         <div className={styles.signInContainer}>
 
@@ -60,15 +68,6 @@ const SignUp = () => {
                         value={password}/>
                 </Grid>
 
-                <Grid className={styles.gridContainer} container>
-                    <TextField
-                        className={styles.textField}
-                        variant="outlined"
-                        label="Confirm Password"
-                        type="password"
-                        onChange={confirmPasswordHandler}
-                        value={confirmpassword}/>
-                </Grid>
                 <Button onClick={handleSubmit} className={styles.signInBtn}>Sign Up</Button>
             </form>
 
@@ -76,4 +75,13 @@ const SignUp = () => {
     )
 }
 
-export default SignUp
+
+const mapStateToProps = (state) => {
+    return {auth: state.firebase.auth}
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signUp: (newUser) => dispatch(signUp(newUser))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp)

@@ -10,6 +10,8 @@ import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
 import {Button} from '@material-ui/core';
+import {Redirect} from 'react-router-dom';
+
 
 const Map = (props) => {
     const [viewport, setViewport] = useState(
@@ -19,19 +21,21 @@ const Map = (props) => {
     const [flag, setFlag] = useState({});
     const [locationInfo, setLocationInfo] = useState([]);
     const [info, setInfo] = useState(null);
+    const { location, auth } = props;
     const showAddMarkerPopUp = e => {
         const [longitude, latitude] = e.lngLat;
-        setInfo({latitude, longitude})
+        setInfo({latitude, longitude});
+        
     }
-
-    const { location } = props;
     
-    console.log(props)
     useEffect(()=>{
         setLocationInfo(location);
     }, [location]);
+    if(!auth.uid) return <Redirect to='/signIn'/>
 
     return (
+       
+
         <div className={styles.map}>
             <div className={styles.sartsugWaste}>
                 <p>Sartsug Waste</p>
@@ -42,7 +46,7 @@ const Map = (props) => {
                     className={styles.map1}
                     {...viewport}
                     onDblClick={showAddMarkerPopUp}
-                    mapStyle="mapbox://styles/mapbox/streets-v11"
+                    mapStyle="mapbox://styles/mapbox/light-v10"
                     mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
                     onViewportChange={nextViewport => setViewport(nextViewport)}>
                     {
@@ -160,9 +164,13 @@ const Map = (props) => {
     );
 }
 const mapStateToProps = (state) => {
-    console.log(state)
-    return {location: state.firestore.ordered.reportedInfo}
+
+    return {
+        location: state.firestore.ordered.reportedInfo,
+        auth: state.firebase.auth
+    }
 }
+
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
