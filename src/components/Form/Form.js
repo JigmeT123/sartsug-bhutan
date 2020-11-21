@@ -25,7 +25,7 @@ const Form = (props,{locationInfo}) => {
             locationInfo: props.locationInfo,
            
         }
-        // console.log(reportInfo);
+        console.log(reportInfo);
         props.createReport(reportInfo)
     }
     const descriptionHandler = e => {

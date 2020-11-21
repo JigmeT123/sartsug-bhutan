@@ -10,14 +10,15 @@ import {connect} from 'react-redux';
 import {firestoreConnect} from 'react-redux-firebase'
 import {compose} from 'redux'
 import {Button} from '@material-ui/core';
+
 const Map = (props) => {
     const [viewport, setViewport] = useState(
         {width: '70%', height: "80%", latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
     );
     const [showPopUp, setShowPopUp] = useState({});
+    const [flag, setFlag] = useState({});
     const [locationInfo, setLocationInfo] = useState([]);
-    const [info, setInfo] = useState({});
-    const [flag, setFlag] = useState(false);
+    const [info, setInfo] = useState(null);
     const showAddMarkerPopUp = e => {
         const [longitude, latitude] = e.lngLat;
         setInfo({latitude, longitude})
@@ -57,15 +58,14 @@ const Map = (props) => {
                                     <GoTrashcan onClick={() => setShowPopUp({
                                         // ...showPopUp,
                                         [locate.id]: true
-
-                                    })} className={`${styles.markerPic} ${flag[locate.id] && styles.yellowMarker}`} />
+                                    })} className={`${styles.markerPic} ${flag[locate.id] && styles.markerYellow }` }/>
 
                              </Marker>
 
                                 {
                                 showPopUp[locate.id] ? (
                                     <Popup
-                                    key={locate.id}
+                                        key={locate.id}
                                         latitude={locate.locationInfo.latitude}
                                         longitude={locate.locationInfo.longitude}
                                         closeButton={true}
@@ -82,7 +82,10 @@ const Map = (props) => {
                                                 {/* <p><span>Reported Time:</span>{locate.createdAt}</p> */}
                                             </div>
                                             <div className={styles.popUpBtnHolder}>
-                                                <Button className={styles.popUpBtn} onClick={()=> setFlag({[locate.id]: true})}>Volunteer</Button>
+                                                <Button className={styles.popUpBtn} onClick={()=> setFlag({
+                                                    ...flag,
+                                                    [locate.id]: true,
+                                                })}>Volunteer</Button>
                                             </div>
                                         </div>
                                     </Popup>
@@ -97,24 +100,16 @@ const Map = (props) => {
                     {
                         info
                             ? (
-                                <> < Popup latitude = {
-                                    info.latitude
-                                }
-                                longitude = {
-                                    info.longitude
-                                }
-                                closeButton = {
-                                    true
-                                }
-                                closeOnClick = {
-                                    false
-                                }
-                                onClose = {
-                                    () => setInfo(null)
-                                }
-                                anchor = "top" dynamicPosition = {
-                                    true
-                                } > <div className={styles.popUp}>
+                                <> 
+                                <Popup 
+                                latitude={info.latitude}
+                                longitude={info.longitude}
+                                closeButton={true}
+                                closeOnClick={false}
+                                onClose={() => setInfo(null)}
+                                anchor = "top" 
+                                dynamicPosition={true}> 
+                                <div className={styles.popUp}>
                                     <h4>Report waste:</h4>
                                     <Form locationInfo={info}/>
                                 </div>
@@ -171,6 +166,6 @@ const mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        {collection: "reportedInfo"}
+        {collection: 'reportedInfo'}
     ])
 )(Map);
