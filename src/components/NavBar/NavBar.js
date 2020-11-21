@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import ToggleBtn from '../sideDrawer/DrawerToggle';
 import SignedLinks from './SignedLinks';
 import SignedOutLinks from './SignedOutLinks';
+import {connect} from 'react-redux';
 
 const Header = ({drawerClick}) => {
     const [handleShow, setHandleShow] = useState(false);
@@ -34,11 +35,17 @@ const Header = ({drawerClick}) => {
             
             
             <nav className={styles.header__navigation}>
-                {/* <SignedLinks /> */}
+                <SignedLinks />
                 <SignedOutLinks />
             </nav>
         </div>
     )
 }
 
-export default Header
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+
+    }
+}
+export default connect(mapStateToProps)(Header)

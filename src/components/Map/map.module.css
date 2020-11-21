@@ -40,7 +40,6 @@
     width: 100%;
     margin-top: -40px;
     background-color: whitesmoke;
-    
 }
 .map1 {
     border-radius: 20px;
@@ -92,9 +91,11 @@ span{
     background-color: #8BD8BD !important;
     color: white !important;
     margin-top: 10px;
+    font-size: 10px !important;
 }
+
 .markerYellow{
-    color: yellow;
+    color: rgb(255, 251, 0);
 }
 
 .instructionBox {

@@ -9,7 +9,11 @@
 .formTitle{
     margin-bottom: 50px;
 }
-
+.errorBox{
+    color: red;
+    height: 100px;
+    padding: 20px;
+}
 .signIn{
     display: flex !important;
     justify-content: center !important;

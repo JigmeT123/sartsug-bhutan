@@ -1,13 +1,22 @@
 import {useState} from 'react';
 import styles from './auth.module.css';
-import {Grid, TextField, Button} from '@material-ui/core'
-const SignIn = () => {
+import {Grid, TextField, Button} from '@material-ui/core';
+import {connect} from 'react-redux';
+import {signIn} from '../../store/actions/authActions';
+import { red } from '@material-ui/core/colors';
+
+const SignIn = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(email, password);
+        console.log(props)
+        const credentials = {
+            email,
+            password,
+        }
+        props.signIn(credentials);
     }
 
     const emailHandler = e => {
@@ -16,6 +25,8 @@ const SignIn = () => {
     const passwordHandler = e => {
         setPassword(e.target.value);
     }
+    const {authError} = props
+  
     return (
         <div className={styles.signInContainer}>
 
@@ -45,10 +56,28 @@ const SignIn = () => {
                 </Grid>
 
                 <Button onClick={handleSubmit} className={styles.signInBtn}>Sign In</Button>
+
+                   
+                <div className={styles.errorBox}>
+                {
+                        authError ? <p>{authError}</p> : null
+                    }
+        
+                </div>
             </form>
 
         </div>
     )
 }
 
-export default SignIn
+const mapStateToProps = (state) => {
+    return {
+        authError: state.auth.authError,
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: (creds) => dispatch(signIn(creds))
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

@@ -23,7 +23,6 @@ const Form = (props,{locationInfo}) => {
             description,
             categories,
             locationInfo: props.locationInfo,
-           
         }
         console.log(reportInfo);
         props.createReport(reportInfo)
