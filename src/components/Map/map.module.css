@@ -52,6 +52,8 @@
 .markerPic {
     font-size: 30px;
     color: red;
+    cursor: pointer;
+    z-index: 500 !important;
 }
 
 .popUp {
@@ -60,13 +62,40 @@
     padding: 20px;
 }
 
-.popUp > h4 {
-    padding-bottom: 20px;
+.popUp > h5 {
+    padding-bottom: 0px;
+    font-size: 20px;
+}
+
+.popUpInner{
+    /* background-color: red; */
+    z-index: 1000 !important;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.popUpInner > p{
+    margin-top: 10px;
+}
+span{
+    color: #273773;
+    font-weight: bold;
 }
 
 .markerPicAdd {
     font-size: 30px;
     color: green;
+}
+.popUpBtn{
+    background-color: #8BD8BD !important;
+    color: white !important;
+    margin-top: 10px;
+}
+
+.yellowMarker{
+    color: yellow;
 }
 
 .instructionBox {

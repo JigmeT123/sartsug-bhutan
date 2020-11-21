@@ -7,20 +7,25 @@ import {GiGlassCelebration} from 'react-icons/gi';
 import Waste from '../wasteContent/Waste';
 import {GiTreeBranch} from 'react-icons/gi';
 import {connect} from 'react-redux';
-
+import {firestoreConnect} from 'react-redux-firebase'
+import {compose} from 'redux'
+import {Button} from '@material-ui/core';
 const Map = (props) => {
     const [viewport, setViewport] = useState(
-        {width: '70%', height: '80%', latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
+        {width: '70%', height: "80%", latitude: 27.508042999999997, longitude: 90.51571369999999, zoom: 8}
     );
     const [showPopUp, setShowPopUp] = useState({});
     const [locationInfo, setLocationInfo] = useState([]);
-    const [info, setInfo] = useState(null);
+    const [info, setInfo] = useState({});
+    const [flag, setFlag] = useState(false);
     const showAddMarkerPopUp = e => {
         const [longitude, latitude] = e.lngLat;
         setInfo({latitude, longitude})
     }
 
     const { location } = props;
+    
+    console.log(props)
     useEffect(()=>{
         setLocationInfo(location);
     }, [location]);
@@ -45,14 +50,15 @@ const Map = (props) => {
                             <>
                             <Marker
                                     key={locate.id}
-                                    latitude={locate.lat}
-                                    longitude={locate.lng}
+                                    latitude={locate.locationInfo.latitude}
+                                    longitude={locate.locationInfo.longitude}
                                     offsetLeft={-20}
                                     offsetTop={-10}>
                                     <GoTrashcan onClick={() => setShowPopUp({
                                         // ...showPopUp,
                                         [locate.id]: true
-                                    })} className={styles.markerPic} />
+
+                                    })} className={`${styles.markerPic} ${flag[locate.id] && styles.yellowMarker}`} />
 
                              </Marker>
 
@@ -60,14 +66,25 @@ const Map = (props) => {
                                 showPopUp[locate.id] ? (
                                     <Popup
                                     key={locate.id}
-                                        latitude={locate.lat}
-                                        longitude={locate.lng}
+                                        latitude={locate.locationInfo.latitude}
+                                        longitude={locate.locationInfo.longitude}
                                         closeButton={true}
                                         closeOnClick={false}
                                         onClose={() => setShowPopUp({})}
                                         anchor="top"
                                         dynamicPosition={true}>
-                                        <div className={styles.popUp}>Hello, World</div>
+                                        <div className={styles.popUp}>
+                                            <h5>Waste reported Info: </h5>
+                                            <div className={styles.popUpInner}>
+                                                <p><span>Reporter Name:</span>{locate.reporterName}</p>
+                                                <p><span>Description of the map:</span>{locate.description}</p>
+                                                <p><span>Severity of the area:</span>{locate.categories}</p>
+                                                {/* <p><span>Reported Time:</span>{locate.createdAt}</p> */}
+                                            </div>
+                                            <div className={styles.popUpBtnHolder}>
+                                                <Button className={styles.popUpBtn} onClick={()=> setFlag({[locate.id]: true})}>Volunteer</Button>
+                                            </div>
+                                        </div>
                                     </Popup>
                                 ) : null
                             }
@@ -148,6 +165,12 @@ const Map = (props) => {
     );
 }
 const mapStateToProps = (state) => {
-    return {location: state.map.report}
+    console.log(state)
+    return {location: state.firestore.ordered.reportedInfo}
 }
-export default connect(mapStateToProps)(Map);
+export default compose(
+    connect(mapStateToProps),
+    firestoreConnect([
+        {collection: "reportedInfo"}
+    ])
+)(Map);

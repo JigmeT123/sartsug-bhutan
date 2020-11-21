@@ -3,8 +3,7 @@ import {Grid, TextField, Button, Select} from '@material-ui/core'
 import {useState} from 'react';
 import {createReport} from '../../store/actions/mapActions';
 import {connect} from 'react-redux';
-import app from '../../firebase';
-import axios from 'axios';
+
 
 const Form = (props,{locationInfo}) => {
     const [description, setDescription] = useState("");
@@ -14,7 +13,8 @@ const Form = (props,{locationInfo}) => {
         "Middle",
         "High",
     ]);
-    const [image, setImage] = useState(null);
+    // const [image, setImage] = useState(null);
+    // const [url, setUrl] = useState(null);
 
     const submitHandler = e => {
         e.preventDefault();
@@ -23,7 +23,7 @@ const Form = (props,{locationInfo}) => {
             description,
             categories,
             locationInfo: props.locationInfo,
-            image,
+           
         }
         // console.log(reportInfo);
         props.createReport(reportInfo)
@@ -37,18 +37,12 @@ const Form = (props,{locationInfo}) => {
         setCategories(category);
     };
 
-    const imgUploadHandler = e => {
-        const file = e.target.files[0];
-        const bucketName = 'images';
-        const storageRef = app.storage().ref(`${bucketName}/${file.name}`)
-        const uploadTask = storageRef.put(file);
-        uploadTask.on(app.storage.TaskEvent.STATE_CHANGED,
-            ()=>{
-                const downloadUrl = uploadTask.snapshots().downloadUrl;
-                setImage(downloadUrl);
-            })
+    // const imgUploadHandler = e => {
+    //     if(e.target.files[0]){
+    //         setImage(image)
+    //     }
         
-    }
+    // }
 
     return (
         <form className={styles.formContainer}>
@@ -57,10 +51,10 @@ const Form = (props,{locationInfo}) => {
                     onChange={descriptionHandler}
                 />
     
-                <p className={styles.fileUploadTitle}>Upload an image</p>
+                {/* <p className={styles.fileUploadTitle}>Upload an image</p>
                 <input type="file" className={styles.fileUpload}
                     onChange={imgUploadHandler}
-                />
+                /> */}
                 <div className={styles.formStyle} >
                     <label htmlFor="exampleInputEmail1">Severity:</label>
                     <Select className="form-control form-control-lg" value={categories} onChange={changeHandler}>
