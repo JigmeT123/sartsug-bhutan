@@ -21,12 +21,14 @@ const Map = (props) => {
     const [flag, setFlag] = useState({});
     const [locationInfo, setLocationInfo] = useState([]);
     const [info, setInfo] = useState(null);
+   
     const { location, auth } = props;
     const showAddMarkerPopUp = e => {
         const [longitude, latitude] = e.lngLat;
         setInfo({latitude, longitude});
         
     }
+    
     
     useEffect(()=>{
         setLocationInfo(location);
@@ -80,7 +82,7 @@ const Map = (props) => {
                                         <div className={styles.popUp}>
                                             <h5>Waste reported Info: </h5>
                                             <div className={styles.popUpInner}>
-                                                <p><span>Reporter Name:</span>{locate.reporterName}</p>
+                                                <p><span>Reporter Name:</span>{locate.name}</p>
                                                 <p><span>Description of the map:</span>{locate.description}</p>
                                                 <p><span>Severity of the area:</span>{locate.categories}</p>
                                                 {/* <p><span>Reported Time:</span>{locate.createdAt}</p> */}
@@ -164,10 +166,10 @@ const Map = (props) => {
     );
 }
 const mapStateToProps = (state) => {
-
     return {
         location: state.firestore.ordered.reportedInfo,
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile,
     }
 }
 

@@ -9,7 +9,7 @@ const SignUp = (props) => {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const {auth, signUp} = props
+    const {auth, signUp, authError} = props
     const handleSubmit = e => {
         e.preventDefault();
         let newUser = {
@@ -67,8 +67,10 @@ const SignUp = (props) => {
                         helperText="We Never share your personal data"
                         value={password}/>
                 </Grid>
+                  
 
                 <Button onClick={handleSubmit} className={styles.signInBtn}>Sign Up</Button>
+                {authError ? <small className={styles.error}>{authError}</small>:null}
             </form>
 
         </div>
@@ -77,7 +79,10 @@ const SignUp = (props) => {
 
 
 const mapStateToProps = (state) => {
-    return {auth: state.firebase.auth}
+    return {
+        auth: state.firebase.auth,
+        authError: state.auth.authError
+    }
 }
 const mapDispatchToProps = (dispatch) => {
     return {

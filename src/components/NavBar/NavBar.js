@@ -43,7 +43,6 @@ const Header = ({drawerClick, auth}) => {
 }
 
 const mapStateToProps = (state) => {
-    
     return {
         auth: state.firebase.auth,
     }
