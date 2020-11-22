@@ -23,9 +23,9 @@ const Header = () => {
                             <Link className={styles.volunteerBtnHolder} to="/signUp">
                             <Button className={styles.volunteerBtn}>Be a part!!</Button>
                         </Link>
-                        <Link className={styles.donateBtnHolder} to="/donation">
+                        {/* <Link className={styles.donateBtnHolder} to="/donation">
                             <Button className={styles.dontateBtn}>Donate</Button>
-                        </Link>
+                        </Link> */}
                             </div>
                         
                     </div>

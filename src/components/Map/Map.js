@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import ReactMapGL, {Marker, Popup} from 'react-map-gl';
 import styles from './map.module.css';
-import {GoTrashcan} from 'react-icons/go';
+import {FaWineBottle} from 'react-icons/fa';
 import Form from '../Form/Form';
 import {GiGlassCelebration} from 'react-icons/gi';
 import Waste from '../wasteContent/Waste';
@@ -28,7 +28,6 @@ const Map = (props) => {
         setInfo({latitude, longitude});
         
     }
-    
     
     useEffect(()=>{
         setLocationInfo(location);
@@ -61,7 +60,7 @@ const Map = (props) => {
                                     longitude={locate.locationInfo.longitude}
                                     offsetLeft={-20}
                                     offsetTop={-10}>
-                                    <GoTrashcan onClick={() => setShowPopUp({
+                                    <FaWineBottle onClick={() => setShowPopUp({
                                         // ...showPopUp,
                                         [locate.id]: true
                                     })} className={`${styles.markerPic} ${flag[locate.id] && styles.markerYellow }` }/>
@@ -84,14 +83,14 @@ const Map = (props) => {
                                             <div className={styles.popUpInner}>
                                                 <p><span>Reporter Name:</span>{locate.name}</p>
                                                 <p><span>Description of the map:</span>{locate.description}</p>
-                                                <p><span>Severity of the area:</span>{locate.categories}</p>
+                                                <p><span>Pick up time in:</span>{locate.categories}</p>
                                                 {/* <p><span>Reported Time:</span>{locate.createdAt}</p> */}
                                             </div>
                                             <div className={styles.popUpBtnHolder}>
                                                 <Button className={styles.popUpBtn} onClick={()=> setFlag({
                                                     ...flag,
                                                     [locate.id]: true,
-                                                })}>Volunteer</Button>
+                                                })}>Pick Up</Button>
                                             </div>
                                         </div>
                                     </Popup>
@@ -122,7 +121,7 @@ const Map = (props) => {
                             </Popup>
 
                             <Marker latitude={info.latitude} longitude={info.longitude}>
-                                <GoTrashcan className={styles.markerPicAdd}/>
+                                <FaWineBottle className={styles.markerPicAdd}/>
                             </Marker>
 
                         </>

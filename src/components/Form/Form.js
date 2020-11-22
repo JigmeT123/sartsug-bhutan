@@ -7,11 +7,11 @@ import {db} from '../../firebase';
 const Form = (props,{locationInfo, auth}) => {
     const [description, setDescription] = useState("");
     const [categories, setCategories] = useState("");
-    const [sarTsugPoints, setSarTsugPoints] = useState(0);
+    const [sarTsugPoints, setSarTsugPoints] = useState(null);
     const [list, setList] = useState([
-        "Low",
-        "Middle",
-        "High",
+        "1 day",
+        "2 day",
+        "3 day",
     ]);
 
     // const [image, setImage] = useState(null);
@@ -24,14 +24,15 @@ const Form = (props,{locationInfo, auth}) => {
 
 
     const submitHandler = e => {
-
         e.preventDefault();
         const id = props.auth.uid;
-        const points = sarTsugPoints + 1;
+        let points = sarTsugPoints + 1;
         setSarTsugPoints(points);
         db.collection('users').doc(id).set({
             sartsugPoints: points,
         })
+        console.log("points: "+ points);
+        console.log("id: "+ id);
         const reportInfo = {
             description,
             categories,
@@ -49,13 +50,6 @@ const Form = (props,{locationInfo, auth}) => {
         setCategories(category);
     };
 
-    // const imgUploadHandler = e => {
-    //     if(e.target.files[0]){
-    //         setImage(image)
-    //     }
-        
-    // }
-
     return (
         <form className={styles.formContainer}>
             <Grid className={styles.gridContainer} container>
@@ -66,14 +60,9 @@ const Form = (props,{locationInfo, auth}) => {
                 <TextField className={styles.textField} multiline={true} variant="outlined" label="Description/Comments" value={description}
                     onChange={descriptionHandler}
                 />
-
-                {/* <p className={styles.fileUploadTitle}>Upload an image</p>
-                <input type="file" className={styles.fileUpload}
-                    onChange={imgUploadHandler}
-                /> */}
                  
                 <div className={styles.formStyle} >
-                    <label htmlFor="exampleInputEmail1">Severity:</label>
+                    <label htmlFor="exampleInputEmail1">Pick Up:</label>
                     <Select className="form-control form-control-lg" value={categories} onChange={changeHandler}>
                         {list.map((category,count) => (<option key={count} value={category}>{category}</option>))}
                     </Select>

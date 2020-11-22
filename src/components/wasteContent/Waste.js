@@ -95,13 +95,8 @@ const Waste = () => {
                                 <h2>See how you can earn WeClean Points:</h2>
                                <p>
                                     <span>Reporting Litter:
-                                    </span>
-                                    will earn you 10 point</p>
-                                <p>
-                                    <span>Sartsug Volunteer:
-                                    </span>
-                                    will earn you 50 point</p>
-                                    <p> <span>Donation:</span> 35 points</p>
+                                    </span> will earn you 2 point</p>
+                                    {/* <p><span>Donation:</span>1 points</p> */}
                             </CardContent>
                         </Card>
 
