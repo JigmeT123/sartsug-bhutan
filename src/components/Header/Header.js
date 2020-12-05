@@ -19,13 +19,10 @@ const Header = () => {
                             change and we, at StarTsug hope to create and implement technologies which will
                             benefit the society, people and every being for the good. Take a journey
                             together with us to “Build for Change”.</p>
-                            <div>
+                            <div className={styles.mashayMarayDiv}>
                             <Link className={styles.volunteerBtnHolder} to="/signUp">
                             <Button className={styles.volunteerBtn}>Be a part!!</Button>
                         </Link>
-                        {/* <Link className={styles.donateBtnHolder} to="/donation">
-                            <Button className={styles.dontateBtn}>Donate</Button>
-                        </Link> */}
                             </div>
                         
                     </div>

@@ -15,7 +15,10 @@ const SideDrawer = ({show}) => {
                     <Link to="/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/services">Sign Up</Link>
+                    <Link to="/signIn">Sign In</Link>
+                </li>
+                <li>
+                    <Link to="/signUp">Sign Up</Link>
                 </li>
             </ul>
         </nav>

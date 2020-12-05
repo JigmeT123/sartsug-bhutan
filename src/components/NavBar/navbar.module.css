@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 60px;
+    padding-left: 60px;
     position: fixed;
     top: 0;
     left: 0;
@@ -24,23 +24,25 @@ a{
 }
 
 .header__navigation{
-    height: 50%;
+    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+    flex: 0.8;
 }
 .header__navigation > ul{
     display: flex;
-    width: 35vw;
+    width: 100%;
     justify-content: space-evenly;
 }
-.header__navigation > ul > a > li{
+
+
+.header__navigation > ul > li{
    list-style-type: none;
-   padding: 20px;
    border-radius: 3px;
 }
 
-.header__navigation > ul > a{
+.header__navigation > ul > li > a{
     color: white;
     text-decoration: none;
 
@@ -83,12 +85,12 @@ a{
     background-color: #8BD8BD;
     color: white;
 }
-a{
+ul > li > a{
     color: white;
     text-decoration: none;
 }
 
-a:hover{
+ul > li > a:hover{
     color: lightgray;
 }
 
@@ -105,6 +107,10 @@ a:hover{
     .header{
         padding-right: 0;
         padding-left: 45px;
+    }
+    .logoComtainer{
+        width: 120px;
+        height: 100%;
     }
     
 }
