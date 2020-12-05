@@ -26,12 +26,12 @@ const CardComponent = ({images, description, name, linkToSite}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
+                <Link to="/">
                 <Button size="small" color="primary">
                     Learn More
                 </Button>
+                </Link>
+               
             </CardActions>
         </Card>
     )

@@ -1,7 +1,7 @@
 .sideDrawer{
     height: 100vh;
-    background-color: white;
-    box-shadow: 2px 0 7px rgba(0,0,0,0.5);
+    background-color: #273773;
+    box-shadow: 2px 0 5px rgba(80, 52, 158, 0.424);
     position: fixed;
     left: 0;
     top: 0;
@@ -28,7 +28,7 @@
 }
 .sideDrawer a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 1.2rem;
 }
 

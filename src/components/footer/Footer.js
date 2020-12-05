@@ -30,14 +30,11 @@ const Footer = () => {
                     <Link to="/">Home</Link>
                     <Link to="/courses">Courses page</Link>
                     <Link to="/">Testimonils</Link>
-                    <Link to="/">Company</Link>
-                    <Link to="/search">Search Jobs</Link>
                     <Link to="/contactUs">Contact Us</Link>
                 </div>
                 <div className={styles.footerFour}>
                     <h4>About Us</h4>
                     <Link to="/aboutUs">Team</Link>
-                    <Link to="/">Jobs</Link>
                 </div>
                 <div className={styles.footerThree}>
                     <h4>Legal</h4>
@@ -50,8 +47,7 @@ const Footer = () => {
             <div className={styles.footerChildTwoContainer}>
                 <div className={styles.footerTwoContainer}>
                     <p>
-                        &copy;Sartsug Bhutan 2020-
-                        <span>Build for change.</span>
+                        &copy;All Rights Reserved; Sartsug Bhutan 2020
                     </p>
                 </div>
             </div>
