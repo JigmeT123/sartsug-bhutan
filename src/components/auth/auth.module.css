@@ -1,5 +1,5 @@
 .signInContainer{
-   
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,10 +32,10 @@
 }
 
 .gridContainer{
-    width: 500px !important;
+    width: 80% !important;
 }
 form{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -46,7 +46,7 @@ form{
     display: flex;
 }
 .textField{
-    width: 100% !important;
+    width: 100%;
     margin-top: 20px;
 }
 .textField:nth-child(1){
@@ -56,6 +56,7 @@ form{
     padding: 10px 20px !important;
     background-color: #8BD8BD !important;
     color: white !important;
-    width: 500px !important;
+    /* width: 500px !important; */
+    width: 33.5%;
     margin-top: 10px !important;
 }
