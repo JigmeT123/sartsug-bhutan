@@ -2,6 +2,7 @@ import styles from './about.module.css';
 import {Button} from '@material-ui/core';
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
+import {GiTrafficCone} from 'react-icons/gi';
 
 const About = () => {
     return (
@@ -15,9 +16,10 @@ const About = () => {
             </div>
 
             <div className={styles.meetTeam}>
-                    <h1>Meet our Team</h1>
+                    <h1>Meet our Team!</h1>
                     <div className={styles.teamProfile}>
-                        
+                        <GiTrafficCone className={styles.cone}/>
+                        <h1>WE WILL UPDATE ON THE TEAM SOON! THANK YOU FOR YOU'RE SUPPORT</h1>
                     </div>
             </div>
 

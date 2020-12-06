@@ -1,0 +1,21 @@
+.thankyou{
+    margin-top: 12vh;
+    width: 100vw;
+    height: 88vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #273773;
+    color: black;
+    font-size: 15px;
+    background: url('../../assets/cute1.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.thankyou > h1{
+    background-color: white;
+    padding: 20px;
+    opacity: 0.6;
+}

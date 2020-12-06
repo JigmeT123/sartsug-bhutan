@@ -30,7 +30,7 @@ const SignUp = (props) => {
     }
 
 
-    if(auth.uid) return <Redirect to='/map'/>
+    if(auth.uid) return <Redirect to='/thankyou'/>
     return (
         <div className={styles.signInContainer}>
 

@@ -10,7 +10,6 @@
     background-position: center;
     background-color: #273773;
     color: white;
-
 }
 .aboutContentTitle{
     width: 100%;
@@ -38,7 +37,57 @@
 .meetTeam {
     width: 100%;
     padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    /* background: url('../../assets/cute.svg') no-repeat; */
+    /* background-size: contain; */
+    background-size: 200px;
+    background-color: #273773;
+    background-position: center;
+    color: white;
 }
 .meetTeam > h1{
     text-align: center;
 }
+
+.cone{
+    font-size: 50px;
+    color: yellow;
+    /* margin-top: -10px; */
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.teamProfile{
+    display: flex;
+    margin-top: 50px;
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    background-color: tomato;
+    padding: 15px;
+}
+
+
+@media only screen and (max-width: 630px) {
+    .teamProfile > h1{
+        font-size: 20px;
+    }
+    .meetTeam {
+        padding-top: 0px;
+        height: 400px;
+    }
+  }
+
+
+  @media only screen and (max-width: 456px) {
+    .teamProfile > h1{
+        font-size: 10px;
+    }
+
+   
+  }
