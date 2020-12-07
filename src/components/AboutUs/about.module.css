@@ -34,6 +34,9 @@
     padding: 10px 20px !important;
     margin-top: 10px !important;
 }
+.aboutContentTitle > a:hover{
+    text-decoration: none;
+}
 .meetTeam {
     width: 100%;
     padding-top: 50px;
@@ -83,11 +86,24 @@
     }
   }
 
+@media only screen and (max-width: 525px) {
+    .aboutContentTitle > h1{
+        font-size: 20px;
+    }
+    .aboutContentTitle > p{
+        font-size: 15px;
+    }
+    .supportBtn{
+        background-color: #8BD8BD !important;
+        padding: 8px 15px !important;
+        font-size: 12px !important;
+    }
+}
+
 
   @media only screen and (max-width: 456px) {
     .teamProfile > h1{
         font-size: 10px;
     }
-
    
   }
