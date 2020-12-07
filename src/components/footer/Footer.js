@@ -9,7 +9,6 @@ const Footer = () => {
                 <div className={styles.footerOne}>
                     <div className={styles.titleHolder}>
                         <img className={styles.imgLogo} src={Logo1} alt="CompanyLogo"/>
-                        <h4>Sartsug Bhutan</h4>
                     </div>
 
                     <p>Here at StarTsug Bhutan, we plan on implementing the newest technology for the benefit for all. We strive to build a safer, cleaner and a society with values and respect for one another. “Build for change” is the reason why we started StarTsug. The only way to see changes is by actually taking a step to make the change and we, at StarTsug hope to create and implement technologies which will benefit the society, people and every being for the good. Take a journey together with us to “Build for Change”.</p>

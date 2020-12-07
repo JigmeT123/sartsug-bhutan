@@ -12,6 +12,8 @@ import LeaderBoard from './components/leaderboard/LeaderBoard';
 import Profile from './components/profile/Profile';
 import About from './components/AboutUs/About';
 import Thankyou from './components/Thankyou/Thankyou';
+import ContactUs from './components/ContactUs/ContactUs';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     const [toggle, setToggle] = useState(false)
@@ -41,6 +43,7 @@ function App() {
                         <Route path="/profile" component={Profile}/>
                         <Route path="/about" component={About}/>
                         <Route path="/thankyou" component={Thankyou}/>
+                        <Route path="/contactUs" component={ContactUs}/>
                     </Switch>
 
                 </div>
@@ -50,3 +53,5 @@ function App() {
 }
 
 export default App;
+
+
