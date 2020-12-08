@@ -1,31 +1,25 @@
 import './side.css';
-import {Link} from 'react-router-dom';
-const SideDrawer = ({show}) => {
+// import {Link} from 'react-router-dom';
+import SignedLinks from '../NavBar/SignedLinks';
+import SignedOutLinks from '../NavBar/SignedOutLinks';
+import {connect} from 'react-redux';
+
+const SideDrawer = ({show, auth}) => {
     let drawClasses = 'sideDrawer';
     if(show){
         drawClasses = 'sideDrawer open'
     }
+    const links = auth.uid ? <SignedLinks /> : <SignedOutLinks />;
     return (
         <nav className={drawClasses}>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/about">About</Link>
-                </li>
-                <li>
-                    <Link to="/contactUs">Contact Us</Link>
-                </li>
-                <li>
-                    <Link to="/signIn">Sign In</Link>
-                </li>
-                <li>
-                    <Link to="/signUp">Sign Up</Link>
-                </li>
-            </ul>
+            {links}
         </nav>
     )
 }
 
-export default SideDrawer
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth,
+    }
+}
+export default connect(mapStateToProps)(SideDrawer)

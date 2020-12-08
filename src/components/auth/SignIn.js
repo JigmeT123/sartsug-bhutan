@@ -26,7 +26,7 @@ const SignIn = (props) => {
     }
     const {authError, auth} = props
 
-    if(auth.uid) return <Redirect to='/thankyou'/>
+    if(auth.uid) return <Redirect to='/profile'/>
   
     return (
         <div className={styles.signInContainer}>

@@ -12,8 +12,13 @@
     transition: all 0.3s ease-in-out;
     background-color: #273773;
 }
-a{
+.linka{
     cursor: pointer;
+    color: white;
+}
+
+.linka:hover{
+    color: lightgray;
 }
 .header__scrolled .header__logo{
     height: 7vh;
@@ -112,5 +117,12 @@ ul > li > a:hover{
         width: 120px;
         height: 100%;
     }
-    
+    .signUpButton{
+        border: 0;
+        height: 20px;
+    }
+    .signUpButton:hover{
+        background-color: transparent;
+        color: lightgray;
+    }
 }

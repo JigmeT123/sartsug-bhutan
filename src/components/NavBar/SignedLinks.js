@@ -18,7 +18,7 @@ const SignedLinks = (props) => {
                     <NavLink to="/contactUs">Contact Us</NavLink>
                 </li>
             <li>
-                <a onClick={props.signOut}>Log Out</a>
+                <a className={styles.linka} onClick={props.signOut}>Log Out</a>
             </li>
             <li className={styles.avatar}>
                 <NavLink to="/profile"><Avatar  alt="jigme" src=""/></NavLink>

@@ -1,7 +1,10 @@
 .profile{
     display: flex;
     position: relative;
-    padding-top: 200px;
+    padding-top: 150px;
+    padding-left: 40px;
+    padding-bottom: 200px;
+    background-color: #273773;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -13,13 +16,37 @@
 .profilePic > h4{
     margin-top: 30px;
     color: #8BD8BD;
+    margin-left: -30px;
 }
 .cardInfo{
     width: 80%;
-    height: 400px;
+    height: 450px;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url('../../assets/wait.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.cardInfo > p{
+    font-size: 25px;
+    text-align: center;
+   
+}
+
+@media screen and (max-width: 680px){
+    .profile{
+        padding-left: 0;
+    }
+    .cardInfo{
+        width: 90%;
+        height: 250px;
+    }
+    
+    .cardInfo > p{
+        font-size: 15px;
+    }
 }

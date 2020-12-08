@@ -32,6 +32,7 @@ const Map = (props) => {
     useEffect(()=>{
         setLocationInfo(location);
     }, [location]);
+    
     if(!auth.uid) return <Redirect to='/signIn'/>
 
     return (
