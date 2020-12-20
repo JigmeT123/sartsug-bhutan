@@ -14,8 +14,8 @@ const CardComponent = ({images, description, name, linkToSite}) => {
     return (
         <Card className={styles.root}>
             <CardActionArea>
-                <Link to={linkToSite}><CardMedia className={styles.media} image={images} title={name}/>
-                </Link>
+                <a href={linkToSite} rel="noopener noreferrer" target="_blank"><CardMedia className={styles.media} image={images} title={name}/>
+                </a>
                 <CardContent>
                     <Typography gutterBottom="gutterBottom" variant="h5" component="h2">
                         {name}
