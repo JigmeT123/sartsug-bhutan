@@ -20,7 +20,7 @@ const Homepage = () => {
                 </div>
                 <div className={styles.homepageContentLogoContainer}>
                     <CardComponent images={Logo4} description="Stay Updated with the covid situation." name="Covid stats" linkToSite="https://mystifying-hamilton-00d18f.netlify.app/"/>
-                    <CardComponent images={Logo5} description="Learn and improve skills by taking this challenge.This challenge is to everyone who wants to groom their skills on web designing. And mainly to Bhutanese ...." name="7D 7W" linkToSite="/https://adoring-borg-e63e77.netlify.app/"/>
+                    <CardComponent images={Logo5} description="Learn and improve skills by taking this challenge.This challenge is to everyone who wants to groom their skills on web designing. And mainly to Bhutanese ...." name="7D 7W" linkToSite="https://adoring-borg-e63e77.netlify.app/"/>
                     <CardComponent images={Logo1} description="We connect volunteers, that are willing to help clean up the cities, send reports about areas with litter, or both" name="Sartsug Waste" linkToSite="/thankyou"/>
                     <CardComponent images={Logo2} description="Coming Soon! We are working on an application that will help solve mental health issues." name="Sartsug Care" linkToSite="/thankyou"/>
                     <CardComponent images={Logo3} description="Coming Soon! E-learning platform for Bhutan" name="Sartsug Learn" linkToSite="/thankyou"/>
